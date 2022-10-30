@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>lemegeton wisp list</name>
+    <directory>lemegeton wisp list</directory>
+    <id>2881588359</id>
+    <description>Never wonder what Lemegeton wisps you have again.
+
+[h1][b]Features[/b][/h1]
+[list]
+[*] Displays all your Lemegeton item wisps when holding tab
+[*] Works with wisps gained from any source, including modded items
+[*] Matches your HUD offset
+[*] Vertical offset can be changed by pressing + or -
+[/list]
+
+[h1][b]Important info that you should READ[/b][/h1]
+It's currently impossible in the API to get the offset of the map when holding tab. The best solution I came up with, as mentioned above, is that you can manually adjust the vertical offset of the list with the + and - keys on your keyboard. If you comment about the map covering the list, you will be permanently banned from this plane of existence :)</description>
+    <version>1.1</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Tweaks"/>
+    <tag id="Graphics"/>
+</metadata>
