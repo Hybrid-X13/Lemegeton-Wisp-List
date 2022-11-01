@@ -14,8 +14,10 @@
 [/list]
 
 [h1][b]Important info that you should READ[/b][/h1]
-It's currently impossible in the API to get the offset of the map when holding tab. The best solution I came up with, as mentioned above, is that you can manually adjust the vertical offset of the list with the + and - keys on your keyboard. If you comment about the map covering the list, you will be permanently banned from this plane of existence :)</description>
-    <version>1.1</version>
+It's currently impossible in the API to get the offset of the map when holding tab. The best solution I came up with, as mentioned above, is that you can manually adjust the vertical offset of the list with the + and - keys on your keyboard. If you comment about the map covering the list, you will be permanently banned from this plane of existence :)
+
+[url=https://github.com/Hybrid-X13/Lemegeton-Wisp-List]GitHub[/url]</description>
+    <version>1.2</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Tweaks"/>
