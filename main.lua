@@ -82,9 +82,9 @@ function mod:postPEffectUpdate(player)
 		Options.ExtraHUDStyle = 0
 		showList = true
 
-		if Input.IsButtonPressed(Keyboard.KEY_MINUS, player.ControllerIndex) then
+		if Input.IsButtonPressed(Keyboard.KEY_MINUS, 0) then
 			verticalOffset = verticalOffset + 1
-		elseif Input.IsButtonPressed(Keyboard.KEY_EQUAL, player.ControllerIndex) then
+		elseif Input.IsButtonPressed(Keyboard.KEY_EQUAL, 0) then
 			verticalOffset = verticalOffset - 1
 		end
 	else
