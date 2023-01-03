@@ -23,36 +23,27 @@ local function GetScreenSize() --Made by Kilburn
     return Vector(rx*2 + 13*26, ry*2 + 7*26)
 end
 
---Make sure there are wisps so that the extra HUD isn't hidden unnecessarily
-local function CheckForVisibleWisps()
+local function GetVisibleWisps()
 	local itemWisps = Isaac.FindByType(EntityType.ENTITY_FAMILIAR, FamiliarVariant.ITEM_WISP)
+	local visibleWisps = {}
 
-	if #itemWisps == 0 then return false end
-
-	for i, wisp in pairs(itemWisps) do
+	for _, wisp in pairs(itemWisps) do
 		if wisp.Visible then
-			return true
+			table.insert(visibleWisps, wisp)
 		end
 	end
 
-	return false
+	return visibleWisps
 end
 
 function mod:postRender()
 	if not showList then return end
 	
 	local sprites = {}
-	local wispList = {}
 	local topRight = Vector(GetScreenSize().X - (24 * Options.HUDOffset), 0)
-	local itemWisps = Isaac.FindByType(EntityType.ENTITY_FAMILIAR, FamiliarVariant.ITEM_WISP)
-
-	for i, wisp in pairs(itemWisps) do
-		if wisp.Visible then
-			table.insert(wispList, wisp)
-		end
-	end
+	local itemWisps = GetVisibleWisps()
 	
-	for i, wisp in pairs(wispList) do
+	for i, wisp in pairs(itemWisps) do
 		local itemID = wisp.SubType
 		local gfx = Isaac.GetItemConfig():GetCollectible(itemID).GfxFileName
 		--Shoutout to Wofsauge for making this formula that I would've never figured out on my own
@@ -72,8 +63,10 @@ end
 mod:AddCallback(ModCallbacks.MC_POST_RENDER, mod.postRender)
 
 function mod:postPEffectUpdate(player)
+	local itemWisps = GetVisibleWisps()
+	
 	if Input.IsActionPressed(ButtonAction.ACTION_MAP, player.ControllerIndex)
-	and CheckForVisibleWisps()
+	and #itemWisps > 0
 	then
 		if not showList then
 			extraHUD = Options.ExtraHUDStyle
